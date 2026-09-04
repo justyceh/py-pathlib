@@ -1,6 +1,6 @@
 from pathlib import Path
-
-p = Path('/Users/Justy/Downloads')
+username = "Justy"
+p = Path(f'/Users/{username}/Downloads')
 
 
 # This function takes a path to a directory and lists all the sub directories
