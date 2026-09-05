@@ -1,4 +1,7 @@
 from pathlib import Path
+import shutil
+import os
+
 username = "Justy"
 p = Path(f'/Users/{username}/Downloads')
 
@@ -11,7 +14,7 @@ def listSubdir(currentpath):
         elif subdir.is_file():
             print(subdir.suffix)
 
-
+# Organizes files in your downloads folder
 def organizeDownloads(currentpath):
     imgExtensions = {'.png', '.jpg', '.JPG', '.PNG', '.avif', '.webp', '.svg', '.jpeg'}
     pdfExtensions = {'.pdf'}
@@ -65,5 +68,17 @@ def organizeDownloads(currentpath):
             destination = destination_folder.joinpath(file.name)
             file.rename(destination)
 
-organizeDownloads(p)
+newpath = Path(f'/Users/{username}/Downloads/mytext.txt')
 
+def readFile(path):
+    print(path.read_text())
+    return path.read_text()
+
+def writeFile(path, text):
+    path.write_text(text)
+
+readFile(newpath)
+
+writeFile(newpath, "moneyyyyyyyyyy")
+
+readFile(newpath)
